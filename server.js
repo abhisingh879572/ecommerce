@@ -33,7 +33,7 @@ app.use("/api/v1/product", productRoutes);
 app.use(express.static(path.join(__dirname,'./client/build')))
 //rest api
 app.get("/", (req, res) => {
-  res.send("<h1>Welcome to ecommerce app</h1>");
+  res.send("<h1>Welcome to ecommercedfdgdvgdgr app</h1>");
 });
 
 
