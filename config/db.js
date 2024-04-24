@@ -1,16 +1,14 @@
 import mongoose from "mongoose";
 import colors from "colors";
 
-// const dbURI = process.env.dbURI || "mongodb://localhost:27017/Ecommerce"; // Providing a default URI if process.env.dbURI is not defined
-
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URL, {
+    await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+      useUnifiedTopology: true
     });
     console.log(
-      `Connected To MongoDB Database ${conn.connection.host}`.bgMagenta.white
+      `Connected To MongoDB Database ${mongoose.connection.host}`.bgMagenta.white
     );
   } catch (error) {
     console.log(`Error in MongoDB ${error}`.bgRed.white);
@@ -18,6 +16,7 @@ const connectDB = async () => {
 };
 
 export default connectDB;
+
 
 // mongosh
 // Current Mongosh Log ID:	661635847129f2cc24ef634a
